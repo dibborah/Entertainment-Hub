@@ -1,8 +1,10 @@
 import React from 'react'
 import axios from "axios"
 import { useEffect } from 'react';
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
+// import { MuiChip } from './Chip';
+import { Stack, Chip } from "@mui/material"
+// import Chip from '@mui/material/Chip';
+// import Stack from '@mui/material/Stack';
 
 const Genres = ({
     type,
@@ -21,6 +23,11 @@ const Genres = ({
         setGenres(data.genres);
     };
 
+    useEffect(() => {
+    
+    }, [genres])
+    
+
     // console.log(genres);
 
     useEffect(() => {
@@ -33,9 +40,22 @@ const Genres = ({
     }, [])
 
     return (
-        <div style={{ padding: "6px 0" }}>
-            {genres?.map((genre) => (<h1>{genre?.name}</h1>))}
-    </div>
+        <>
+            {
+                genres?.map((genre) => (
+                    <h1 key={genre?.id}>{genre?.name}</h1>
+                ))}
+            {/* {genres && 
+            genres.map((g)=>(
+                <Chip 
+                label={g.name}
+                style={{margin:2}} 
+                size='small' 
+                key={g.id}
+                clickable
+                 />
+            ))} */}
+        </>
     )
 }
 
