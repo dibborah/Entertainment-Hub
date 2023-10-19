@@ -2,7 +2,7 @@ import React from 'react'
 import { img_300, unavailable } from '../../config/config'
 import "./SingleContent.css"
 import Badge from '@mui/material/Badge';
-import ContentModal from '../ContentModal';
+import ContentModal from '../ContentModal/ContentModal';
 
 const SingleContent = ({ id, poster, title, date, media_type, vote_average }) => {
     return (
