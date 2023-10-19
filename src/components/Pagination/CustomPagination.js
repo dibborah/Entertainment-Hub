@@ -24,8 +24,9 @@ const CustomPagination = ({ setPage, numOfPages = 10 }) => {
                 <Pagination
                     count={numOfPages}
                     onChange={(e) => handlePageChange(e.target.textContent)} 
-                    hideNextButton
-                    hidePrevButton
+                    //Both the Previous and Next buttons of the paginations will get hidden
+                    // hideNextButton
+                    // hidePrevButton
                     color='primary'
                 />
             </ThemeProvider>
