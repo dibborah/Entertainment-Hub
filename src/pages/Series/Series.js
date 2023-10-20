@@ -14,14 +14,13 @@ const Series = () => {
     const { data } = await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=5efa4b075d423dc33f2099d2166c935c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`);
 
     setContent(data.results);
+    // setNumOfpages(data.total_pages);
     setNumOfPages(data.total_pages);
   }
 
   useEffect(() => {
     fetchSeries();
   }, [page])
-
-
 
   return (
     <div>
@@ -42,11 +41,9 @@ const Series = () => {
         }
 
         {/* This code below (the pagination) is not working */}
-
-        {
-          numOfPages > 1 && (
-           <CustomPagination setPages={setPage} numOfPages={numOfPages}/>
-          )}
+        {numOfPages > 1 && (
+          <CustomPagination setPage={setPage} numOfPages={numOfPages} />
+        )}
       </div>
     </div>
   )

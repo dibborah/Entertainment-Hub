@@ -21,7 +21,7 @@ const Search = () => {
     palette: {
       type: "dark",
       primary: {
-        main: "#fff",
+        main: "#ffffff",
       },
     },
   })
@@ -44,11 +44,12 @@ const Search = () => {
       <ThemeProvider theme={darkTheme}>
         <div style={{ display: "flex", margin: "15px 0" }}>
           <TextField
-            style={{ flex: 1 }}
+            style={{ flex: 1}}
             className='searchBox'
             label="Search"
             variant="filled"
             onChange={(e) => setSearchText(e.target.value)}
+           
           />
           <button variant="contained" style={{ marginLeft: 10 }} onClick={fetchSearch}>
             <SearchOutlinedIcon />
@@ -84,12 +85,12 @@ const Search = () => {
               vote_average={c?.vote_average}
             />
           ))}
-          {/* {
+          {
             //This code is not working//Look at it later
             searchText && 
             !content &&
             (type ? <h2> No Series Found</h2> : <h2> No Movies Found</h2>)
-          } */}
+          }
       </div>
       {numOfPages > 1 && (
       <CustomPagination setPage={setPage} numOfPages={numOfPages} />
